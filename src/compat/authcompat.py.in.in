@@ -468,7 +468,6 @@ class AuthCompat:
                 "It does not provide all capabilities of authconfig.\n"))
         print(_("IMPORTANT: authconfig is replaced by authselect, "
                 "please update your scripts."))
-        print(_("See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/AuthselectAsDefault"))
         print(_("See man authselect-migration(7) to help you with migration to authselect"))
 
         options = self.options.getSetButUnsupported()
