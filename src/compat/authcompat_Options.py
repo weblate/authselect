@@ -93,7 +93,6 @@ class Options:
         Option.Valued ("smartcardaction", _("<0=Lock|1=Ignore>"), _("action to be taken on smart card removal")),
         Option.Feature("requiresmartcard",_("require smart card for authentication by default")),
         Option.Feature("fingerprint",     _("authentication with fingerprint readers by default")),
-        Option.Feature("ecryptfs",        _("automatic per-user ecryptfs")),
         Option.Feature("krb5",            _("Kerberos authentication by default")),
         Option.Valued ("krb5kdc",         _("<server>"), _("default Kerberos KDC")),
         Option.Valued ("krb5adminserver", _("<server>"), _("default Kerberos admin server")),
@@ -141,6 +140,7 @@ class Options:
         # layers and will produce warning when used. They will not affect
         # the system.
         Option.UnsupportedFeature("cache"),
+        Option.UnsupportedFeature("ecryptfs"),
         Option.UnsupportedFeature("shadow"),
         Option.UnsupportedSwitch ("useshadow"),
         Option.UnsupportedFeature("md5"),

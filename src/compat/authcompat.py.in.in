@@ -520,7 +520,6 @@ class AuthCompat:
             'smartcard'        : 'with-smartcard',
             'requiresmartcard' : 'with-smartcard-required',
             'fingerprint'      : 'with-fingerprint',
-            'ecryptfs'         : 'with-ecryptfs',
             'mkhomedir'        : 'with-mkhomedir',
             'faillock'         : 'with-faillock',
             'pamaccess'        : 'with-pamaccess',
