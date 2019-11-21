@@ -50,7 +50,6 @@ void test_authselect_probe_enabled__pam_unix_nullok__enabled(void **state)
     int ret;
 
     will_return_always(textfile_read, "auth sufficient pam_unix.so nullok try_first_pass");
-
     ret = authselect_probe_enabled(AUTHSELECT_PROBE_PAM_UNIX_NULLOK, &enabled);
     assert_int_equal(ret, EOK);
     assert_true(enabled);
@@ -83,7 +82,6 @@ void test_authselect_probe_enabled__pam_unix_nullok__missing(void **state)
     int ret;
 
     will_return_always(textfile_read, "auth sufficient pam_sss.so");
-
     ret = authselect_probe_enabled(AUTHSELECT_PROBE_PAM_UNIX_NULLOK, &enabled);
     assert_int_equal(ret, ENOENT);
 }
@@ -94,7 +92,6 @@ void test_authselect_probe_enabled__pam_unix_nullok__invalid(void **state)
     int ret;
 
     will_return_always(textfile_read, "authentication sufficient pam_sss.so");
-
     ret = authselect_probe_enabled(AUTHSELECT_PROBE_PAM_UNIX_NULLOK, &enabled);
     assert_int_equal(ret, EBADMSG);
 }

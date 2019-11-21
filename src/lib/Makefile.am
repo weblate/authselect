@@ -49,6 +49,7 @@ authselect_state_dir=@AUTHSELECT_STATE_DIR@
 libauthselect_la_SOURCES = \
     authselect.c \
     authselect_backup.c \
+    authselect_probe.c \
     authselect_profile.c \
     authselect_files.c \
     authselect_paths.c \

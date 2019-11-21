@@ -15,6 +15,7 @@ noinst_HEADERS = \
     $(NULL)
 
 TESTS = \
+	test_lib_probe \
     test_pam_parser \
     test_pam_stack \
     test_util_string_array \
@@ -23,6 +24,24 @@ TESTS = \
     $(NULL)
 
 check_PROGRAMS = $(TESTS)
+
+test_lib_probe_SOURCES = \
+    test_lib_probe.c \
+    ../lib/authselect_probe.c \
+    ../lib/pam/parser.c \
+    ../lib/pam/stack.c \
+    ../lib/util/file.c \
+    ../lib/util/string_array.c \
+    ../lib/util/string.c \
+    $(NULL)
+test_lib_probe_CFLAGS = \
+    $(AM_CFLAGS) \
+    -DAUTHSELECT_PAM_DIR=\"$(top_srcdir)/src/tests/test_lib_probe\" \
+    $(NULL)
+test_lib_probe_LDADD = \
+    $(CMOCKA_LIBS) \
+    $(top_builddir)/src/common/libcommon.la \
+    $(NULL)
 
 test_pam_parser_SOURCES = \
     test_pam_parser.c \

@@ -600,4 +600,27 @@ typedef void (*authselect_debug_fn)(void *pvt,
  */
 void authselect_set_debug_fn(authselect_debug_fn fn, void *pvt);
 
+enum authselect_probe {
+    AUTHSELECT_PROBE_PAM_UNIX_NULLOK,
+
+    AUTHSELECT_PROBE_SENTINEL
+};
+
+/**
+ * Probe PAM configuration to see if a specific feature is enabled or not.
+ *
+ * This works with both authselect and non-authselect configurations.
+ *
+ * @param probe What information should be obtained.
+ * @param _enable Result. True if the feature is enabled, false otherwise.
+ *
+ * @return
+ * - 0 if the information was obtained correctly.
+ * - EBADMSG if it fails to parse PAM configuration.
+ * - ENOENT if the information is not available.
+ * - Other errno code on generic error.
+ */
+int
+authselect_probe_enabled(enum authselect_probe probe, bool *_enabled);
+
 #endif /* _AUTHSELECT_H_ */
