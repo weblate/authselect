@@ -44,6 +44,10 @@ void debug(enum authselect_debug level,
     va_list va;
     char *msg;
 
+    if (debug_fn == NULL) {
+        return;
+    }
+
     va_start(va, fmt);
     msg = vaformat(fmt, va);
     va_end(va);
