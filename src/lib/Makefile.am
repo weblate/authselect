@@ -13,6 +13,7 @@ noinst_HEADERS = \
     constants.h \
     paths.h \
     files/files.h \
+    pam/pam.h \
     profiles/profiles.h \
     util/dir.h \
     util/file.h \
@@ -54,6 +55,8 @@ libauthselect_la_SOURCES = \
     files/config.c \
     files/symlinks.c \
     files/system.c \
+    pam/parser.c \
+    pam/stack.c \
     profiles/activate.c \
     profiles/custom.c \
     profiles/list.c \

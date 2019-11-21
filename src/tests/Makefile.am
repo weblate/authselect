@@ -15,12 +15,41 @@ noinst_HEADERS = \
     $(NULL)
 
 TESTS = \
+    test_pam_parser \
+    test_pam_stack \
     test_util_string_array \
     test_util_evaluator \
     test_util_template \
     $(NULL)
 
 check_PROGRAMS = $(TESTS)
+
+test_pam_parser_SOURCES = \
+    test_pam_parser.c \
+    ../lib/pam/parser.c \
+    ../lib/util/string_array.c \
+    ../lib/util/string.c \
+    $(NULL)
+test_pam_parser_CFLAGS = \
+    $(AM_CFLAGS)
+test_pam_parser_LDADD = \
+    $(CMOCKA_LIBS) \
+    $(top_builddir)/src/common/libcommon.la \
+    $(NULL)
+
+test_pam_stack_SOURCES = \
+    test_pam_stack.c \
+    ../lib/pam/parser.c \
+    ../lib/pam/stack.c \
+    ../lib/util/string_array.c \
+    ../lib/util/string.c \
+    $(NULL)
+test_pam_stack_CFLAGS = \
+    $(AM_CFLAGS)
+test_pam_stack_LDADD = \
+    $(CMOCKA_LIBS) \
+    $(top_builddir)/src/common/libcommon.la \
+    $(NULL)
 
 test_util_string_array_SOURCES = \
     test_util_string_array.c \
