@@ -185,4 +185,13 @@ string_replace_shake(char *str, size_t original_length);
 int
 string_levenshtein(const char *a, const char *b);
 
+/**
+ * Return true if @needle is foudn in @haystack.
+ *
+ * @param needle   String ot find in @haystack.
+ * @param haystack NULL-terminated string array.
+ */
+bool
+string_in(const char *needle, const char **haystack);
+
 #endif /* _STRING_H_ */

@@ -371,3 +371,21 @@ string_levenshtein(const char *a, const char *b)
 
     return column[len_a];
 }
+
+bool
+string_in(const char *needle, const char **haystack)
+{
+    int i;
+
+    if (needle == NULL || haystack == NULL) {
+        return false;
+    }
+
+    for (i = 0; haystack[i] != NULL; i++) {
+        if (strcmp(needle, haystack[i]) == 0) {
+            return true;
+        }
+    }
+
+    return false;
+}
