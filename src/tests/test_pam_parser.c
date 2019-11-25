@@ -65,8 +65,8 @@ textfile_read(const char *filepath,
     }
 
     if (strcmp(filepath, "test_pam_stack_parse__phases") == 0) {
-        stack = "auth sufficient pam_sss.so forward_pass\n"
-                "account required pam_unix.so\n"
+        stack = "account required pam_unix.so\n"
+                "auth sufficient pam_sss.so forward_pass\n"
                 "password requisite pam_pwquality.so try_first_pass local_users_only\n"
                 "session optional pam_keyinit.so revoke\n";
     }
@@ -81,6 +81,78 @@ textfile_read(const char *filepath,
 
     if (strcmp(filepath, "test_pam_stack_parse__invalid_file") == 0) {
         return EACCES;
+    }
+
+    if (strcmp(filepath, "test_pam_stack_parse__include_single_line") == 0) {
+        stack = "account include test_pam_stack_parse__phases\n";
+    }
+
+    if (strcmp(filepath, "test_pam_stack_parse__include_phases") == 0) {
+        stack = "account include test_pam_stack_parse__phases\n"
+                "auth include test_pam_stack_parse__phases\n"
+                "password include test_pam_stack_parse__phases\n"
+                "session include test_pam_stack_parse__phases\n";
+    }
+
+    if (strcmp(filepath, "test_pam_stack_parse__include_mixed") == 0) {
+        stack = "account required pam_unix.so\n"
+                "auth sufficient pam_pre.so\n"
+                "auth include test_pam_stack_parse__phases\n"
+                "auth sufficient pam_post.so\n"
+                "password include test_pam_stack_parse__phases\n"
+                "session include test_pam_stack_parse__phases\n";
+    }
+
+    if (strcmp(filepath, "test_pam_stack_parse__substack_single_line") == 0) {
+        stack = "account substack test_pam_stack_parse__phases\n";
+    }
+
+    if (strcmp(filepath, "test_pam_stack_parse__substack_phases") == 0) {
+        stack = "account substack test_pam_stack_parse__phases\n"
+                "auth substack test_pam_stack_parse__phases\n"
+                "password substack test_pam_stack_parse__phases\n"
+                "session substack test_pam_stack_parse__phases\n";
+    }
+
+    if (strcmp(filepath, "test_pam_stack_parse__substack_mixed") == 0) {
+        stack = "account required pam_unix.so\n"
+                "auth sufficient pam_pre.so\n"
+                "auth substack test_pam_stack_parse__phases\n"
+                "auth sufficient pam_post.so\n"
+                "password substack test_pam_stack_parse__phases\n"
+                "session substack test_pam_stack_parse__phases\n";
+    }
+
+    if (strcmp(filepath, "test_pam_stack_parse__include_substack") == 0) {
+        stack = "account include test_pam_stack_parse__phases\n"
+                "auth substack test_pam_stack_parse__phases\n"
+                "password include test_pam_stack_parse__phases\n"
+                "session substack test_pam_stack_parse__phases\n";
+    }
+
+    if (strcmp(filepath, "test_pam_stack_parse__loop") == 0) {
+        stack = "account include test_pam_stack_parse__loop_1\n";
+    }
+
+    if (strcmp(filepath, "test_pam_stack_parse__loop_1") == 0) {
+        stack = "account substack test_pam_stack_parse__loop_2\n";
+    }
+
+    if (strcmp(filepath, "test_pam_stack_parse__loop_2") == 0) {
+        stack = "account include test_pam_stack_parse__loop\n";
+    }
+
+    if (strcmp(filepath, "/etc/pam.d/system-auth") == 0) {
+        stack = "account include system-auth-include\n"
+                "auth substack /etc/other-pam.d/substack\n";
+    }
+
+    if (strcmp(filepath, "/etc/pam.d/system-auth-include") == 0) {
+        stack = "account required pam_unix.so\n";
+    }
+
+    if (strcmp(filepath, "/etc/other-pam.d/substack") == 0) {
+        stack = "auth required pam_sss.so\n";
     }
 
     assert_non_null(stack);
@@ -239,14 +311,14 @@ void test_pam_stack_parse__phases(void **state)
     assert_int_equal(ret, EOK);
 
     line = stack;
-    assert_pam_line(line, "auth sufficient pam_sss.so forward_pass", false,
-                    "auth", "sufficient", "pam_sss.so", "forward_pass");
+    assert_pam_line(line, "account required pam_unix.so", false,
+                        "account", "required", "pam_unix.so", "");
     assert_null(line->prev);
     assert_non_null(line->next);
 
     line = line->next;
-    assert_pam_line(line, "account required pam_unix.so", false,
-                    "account", "required", "pam_unix.so", "");
+    assert_pam_line(line, "auth sufficient pam_sss.so forward_pass", false,
+                        "auth", "sufficient", "pam_sss.so", "forward_pass");
     assert_non_null(line->prev);
     assert_non_null(line->next);
 
@@ -292,6 +364,276 @@ void test_pam_stack_parse__invalid_file(void **state)
     assert_int_equal(ret, EACCES);
 }
 
+void test_pam_stack_parse__include_single_line(void **state)
+{
+    struct pam_stack *stack;
+    errno_t ret;
+
+    ret = pam_stack_parse(__FUNCTION__, &stack);
+    assert_int_equal(ret, EOK);
+
+    assert_pam_line(stack, "account required pam_unix.so", false,
+                    "account", "required", "pam_unix.so", "");
+    assert_null(stack->prev);
+    assert_null(stack->next);
+
+    pam_stack_free(stack);
+}
+
+void test_pam_stack_parse__include_phases(void **state)
+{
+    struct pam_stack *stack;
+    struct pam_stack *line;
+    errno_t ret;
+
+    ret = pam_stack_parse(__FUNCTION__, &stack);
+    assert_int_equal(ret, EOK);
+
+    line = stack;
+    assert_pam_line(line, "account required pam_unix.so", false,
+                    "account", "required", "pam_unix.so", "");
+    assert_null(line->prev);
+    assert_non_null(line->next);
+
+    line = line->next;
+    assert_pam_line(line, "auth sufficient pam_sss.so forward_pass", false,
+                    "auth", "sufficient", "pam_sss.so", "forward_pass");
+    assert_non_null(line->prev);
+    assert_non_null(line->next);
+
+    line = line->next;
+    assert_pam_line(line, "password requisite pam_pwquality.so try_first_pass local_users_only", false,
+                    "password", "requisite", "pam_pwquality.so", "try_first_pass local_users_only");
+    assert_non_null(line->prev);
+    assert_non_null(line->next);
+
+    line = line->next;
+    assert_pam_line(line, "session optional pam_keyinit.so revoke", false,
+                    "session", "optional", "pam_keyinit.so", "revoke");
+    assert_non_null(line->prev);
+    assert_null(line->next);
+
+    pam_stack_free(stack);
+}
+
+void test_pam_stack_parse__include_mixed(void **state)
+{
+    struct pam_stack *stack;
+    struct pam_stack *line;
+    errno_t ret;
+
+    ret = pam_stack_parse(__FUNCTION__, &stack);
+    assert_int_equal(ret, EOK);
+
+    line = stack;
+    assert_pam_line(line, "account required pam_unix.so", false,
+                    "account", "required", "pam_unix.so", "");
+    assert_null(line->prev);
+    assert_non_null(line->next);
+
+    line = line->next;
+    assert_pam_line(line, "auth sufficient pam_pre.so", false,
+                    "auth", "sufficient", "pam_pre.so", "");
+    assert_non_null(line->prev);
+    assert_non_null(line->next);
+
+    line = line->next;
+    assert_pam_line(line, "auth sufficient pam_sss.so forward_pass", false,
+                    "auth", "sufficient", "pam_sss.so", "forward_pass");
+    assert_non_null(line->prev);
+    assert_non_null(line->next);
+
+    line = line->next;
+    assert_pam_line(line, "auth sufficient pam_post.so", false,
+                    "auth", "sufficient", "pam_post.so", "");
+    assert_non_null(line->prev);
+    assert_non_null(line->next);
+
+
+    line = line->next;
+    assert_pam_line(line, "password requisite pam_pwquality.so try_first_pass local_users_only", false,
+                    "password", "requisite", "pam_pwquality.so", "try_first_pass local_users_only");
+    assert_non_null(line->prev);
+    assert_non_null(line->next);
+
+    line = line->next;
+    assert_pam_line(line, "session optional pam_keyinit.so revoke", false,
+                    "session", "optional", "pam_keyinit.so", "revoke");
+    assert_non_null(line->prev);
+    assert_null(line->next);
+
+    pam_stack_free(stack);
+}
+
+void test_pam_stack_parse__substack_single_line(void **state)
+{
+    struct pam_stack *stack;
+    errno_t ret;
+
+    ret = pam_stack_parse(__FUNCTION__, &stack);
+    assert_int_equal(ret, EOK);
+
+    assert_pam_line(stack, "account required pam_unix.so", false,
+                    "account", "required", "pam_unix.so", "");
+    assert_null(stack->prev);
+    assert_null(stack->next);
+
+    pam_stack_free(stack);
+}
+
+void test_pam_stack_parse__substack_phases(void **state)
+{
+    struct pam_stack *stack;
+    struct pam_stack *line;
+    errno_t ret;
+
+    ret = pam_stack_parse(__FUNCTION__, &stack);
+    assert_int_equal(ret, EOK);
+
+    line = stack;
+    assert_pam_line(line, "account required pam_unix.so", false,
+                    "account", "required", "pam_unix.so", "");
+    assert_null(line->prev);
+    assert_non_null(line->next);
+
+    line = line->next;
+    assert_pam_line(line, "auth sufficient pam_sss.so forward_pass", false,
+                    "auth", "sufficient", "pam_sss.so", "forward_pass");
+    assert_non_null(line->prev);
+    assert_non_null(line->next);
+
+    line = line->next;
+    assert_pam_line(line, "password requisite pam_pwquality.so try_first_pass local_users_only", false,
+                    "password", "requisite", "pam_pwquality.so", "try_first_pass local_users_only");
+    assert_non_null(line->prev);
+    assert_non_null(line->next);
+
+    line = line->next;
+    assert_pam_line(line, "session optional pam_keyinit.so revoke", false,
+                    "session", "optional", "pam_keyinit.so", "revoke");
+    assert_non_null(line->prev);
+    assert_null(line->next);
+
+    pam_stack_free(stack);
+}
+
+void test_pam_stack_parse__substack_mixed(void **state)
+{
+    struct pam_stack *stack;
+    struct pam_stack *line;
+    errno_t ret;
+
+    ret = pam_stack_parse(__FUNCTION__, &stack);
+    assert_int_equal(ret, EOK);
+
+    line = stack;
+    assert_pam_line(line, "account required pam_unix.so", false,
+                    "account", "required", "pam_unix.so", "");
+    assert_null(line->prev);
+    assert_non_null(line->next);
+
+    line = line->next;
+    assert_pam_line(line, "auth sufficient pam_pre.so", false,
+                    "auth", "sufficient", "pam_pre.so", "");
+    assert_non_null(line->prev);
+    assert_non_null(line->next);
+
+    line = line->next;
+    assert_pam_line(line, "auth sufficient pam_sss.so forward_pass", false,
+                    "auth", "sufficient", "pam_sss.so", "forward_pass");
+    assert_non_null(line->prev);
+    assert_non_null(line->next);
+
+    line = line->next;
+    assert_pam_line(line, "auth sufficient pam_post.so", false,
+                    "auth", "sufficient", "pam_post.so", "");
+    assert_non_null(line->prev);
+    assert_non_null(line->next);
+
+    line = line->next;
+    assert_pam_line(line, "password requisite pam_pwquality.so try_first_pass local_users_only", false,
+                    "password", "requisite", "pam_pwquality.so", "try_first_pass local_users_only");
+    assert_non_null(line->prev);
+    assert_non_null(line->next);
+
+    line = line->next;
+    assert_pam_line(line, "session optional pam_keyinit.so revoke", false,
+                    "session", "optional", "pam_keyinit.so", "revoke");
+    assert_non_null(line->prev);
+    assert_null(line->next);
+
+    pam_stack_free(stack);
+}
+
+void test_pam_stack_parse__include_substack(void **state)
+{
+    struct pam_stack *stack;
+    struct pam_stack *line;
+    errno_t ret;
+
+    ret = pam_stack_parse(__FUNCTION__, &stack);
+    assert_int_equal(ret, EOK);
+
+    line = stack;
+    assert_pam_line(line, "account required pam_unix.so", false,
+                    "account", "required", "pam_unix.so", "");
+    assert_null(line->prev);
+    assert_non_null(line->next);
+
+    line = line->next;
+    assert_pam_line(line, "auth sufficient pam_sss.so forward_pass", false,
+                    "auth", "sufficient", "pam_sss.so", "forward_pass");
+    assert_non_null(line->prev);
+    assert_non_null(line->next);
+
+    line = line->next;
+    assert_pam_line(line, "password requisite pam_pwquality.so try_first_pass local_users_only", false,
+                    "password", "requisite", "pam_pwquality.so", "try_first_pass local_users_only");
+    assert_non_null(line->prev);
+    assert_non_null(line->next);
+
+    line = line->next;
+    assert_pam_line(line, "session optional pam_keyinit.so revoke", false,
+                    "session", "optional", "pam_keyinit.so", "revoke");
+    assert_non_null(line->prev);
+    assert_null(line->next);
+
+    pam_stack_free(stack);
+}
+
+void test_pam_stack_parse__loop(void **state)
+{
+    struct pam_stack *stack;
+    errno_t ret;
+
+    ret = pam_stack_parse(__FUNCTION__, &stack);
+    assert_int_equal(ret, ELOOP);
+}
+
+void test_pam_stack_parse__paths(void **state)
+{
+    struct pam_stack *stack;
+    struct pam_stack *line;
+    errno_t ret;
+
+    ret = pam_stack_parse("/etc/pam.d/system-auth", &stack);
+    assert_int_equal(ret, EOK);
+
+    line = stack;
+    assert_pam_line(line, "account required pam_unix.so", false,
+                    "account", "required", "pam_unix.so", "");
+    assert_null(line->prev);
+    assert_non_null(line->next);
+
+    line = line->next;
+    assert_pam_line(line, "auth required pam_sss.so", false,
+                    "auth", "required", "pam_sss.so", "");
+    assert_non_null(line->prev);
+    assert_null(line->next);
+
+    pam_stack_free(stack);
+}
+
 int main(int argc, const char *argv[])
 {
 
@@ -307,6 +649,15 @@ int main(int argc, const char *argv[])
         cmocka_unit_test(test_pam_stack_parse__invalid_phase),
         cmocka_unit_test(test_pam_stack_parse__invalid_action),
         cmocka_unit_test(test_pam_stack_parse__invalid_file),
+        cmocka_unit_test(test_pam_stack_parse__include_single_line),
+        cmocka_unit_test(test_pam_stack_parse__include_phases),
+        cmocka_unit_test(test_pam_stack_parse__include_mixed),
+        cmocka_unit_test(test_pam_stack_parse__substack_single_line),
+        cmocka_unit_test(test_pam_stack_parse__substack_phases),
+        cmocka_unit_test(test_pam_stack_parse__substack_mixed),
+        cmocka_unit_test(test_pam_stack_parse__include_substack),
+        cmocka_unit_test(test_pam_stack_parse__loop),
+        cmocka_unit_test(test_pam_stack_parse__paths),
     };
 
     return cmocka_run_group_tests(tests, NULL, NULL);

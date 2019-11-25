@@ -27,6 +27,7 @@ check_PROGRAMS = $(TESTS)
 test_pam_parser_SOURCES = \
     test_pam_parser.c \
     ../lib/pam/parser.c \
+    ../lib/util/file.c \
     ../lib/util/string_array.c \
     ../lib/util/string.c \
     $(NULL)
@@ -41,6 +42,7 @@ test_pam_stack_SOURCES = \
     test_pam_stack.c \
     ../lib/pam/parser.c \
     ../lib/pam/stack.c \
+    ../lib/util/file.c \
     ../lib/util/string_array.c \
     ../lib/util/string.c \
     $(NULL)
