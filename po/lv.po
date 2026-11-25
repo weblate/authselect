@@ -1,0 +1,1364 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Red Hat, Inc.
+# This file is distributed under the same license as the authselect package.
+# Rihards Prieditis <rprieditis@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: authselect 1.7.0\n"
+"Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
+"POT-Creation-Date: 2026-01-21 15:13+0100\n"
+"PO-Revision-Date: 2026-11-23 16:18+0000\n"
+"Last-Translator: Rihards Prieditis <rprieditis@gmail.com>\n"
+"Language-Team: Latvian <https://translate.fedoraproject.org/projects/"
+"authselect/1-5-x/lv/>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= "
+"19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.11.2\n"
+
+#: src/lib/authselect.c:47 src/lib/authselect.c:188
+msgid "Unable to obtain supported features"
+msgstr "Neizdevās iegūt atbalstītos līdzekļus"
+
+#: src/lib/authselect.c:59
+#, c-format
+msgid "Unknown profile feature [%s], did you mean [%s]?"
+msgstr "Nezināms profila līdzeklis [%s], vai domājāt [%s]?"
+
+#: src/lib/authselect.c:62
+#, c-format
+msgid "Unknown profile feature [%s]"
+msgstr "Nezināms profila līdzeklis [%s]"
+
+#: src/lib/authselect.c:86
+#, c-format
+msgid "Trying to activate profile [%s]"
+msgstr "Mēģina aktivizēt profilu [%s]"
+
+#: src/lib/authselect.c:90 src/lib/authselect.c:181 src/lib/profiles/read.c:316
+#, c-format
+msgid "Unable to find profile [%s] [%d]: %s"
+msgstr "Neizdevās atrast profilu [%s] [%d]: %s"
+
+#: src/lib/authselect.c:101
+msgid "Enforcing activation!"
+msgstr "Aktivizēšana tiek piespiesta!"
+
+#: src/lib/authselect.c:110
+#, c-format
+msgid ""
+"%s is missing or unreadable, system was not properly configured by "
+"authselect."
+msgstr ""
+"%s trūkst vai nav nolasāms, authselect sistēmu nav pareizi konfigurējis."
+
+#: src/lib/authselect.c:112
+msgid "Refusing to activate profile unless overwrite is requested."
+msgstr "Profils netiks aktivizēts, kamēr nav pieprasīta pārrakstīšana."
+
+#: src/lib/authselect.c:118
+msgid ""
+"Changes to the authselect configuration were detected. These changes will be "
+"overwritten. Please call 'authselect opt-out' in order to keep them."
+msgstr ""
+"Konstatētas authselect konfigurācijas izmaiņas. Šīs izmaiņas tiks "
+"pārrakstītas. Lai tās paturētu, izsauciet 'authselect opt-out'."
+
+#: src/lib/authselect.c:127
+#, c-format
+msgid "Unable to activate profile [%s] [%d]: %s"
+msgstr "Neizdevās aktivizēt profilu [%s] [%d]: %s"
+
+#: src/lib/authselect.c:141
+msgid "Trying to uninstall authselect configuration"
+msgstr "Mēģina atinstalēt authselect konfigurāciju"
+
+#: src/lib/authselect.c:145
+#, c-format
+msgid "Unable to remove symlinks [%d]: %s"
+msgstr "Neizdevās noņemt simboliskās saites [%d]: %s"
+
+#: src/lib/authselect.c:149
+msgid "Symbolic links were successfully removed"
+msgstr "Simboliskās saites veiksmīgi noņemtas"
+
+#: src/lib/authselect.c:154
+#, c-format
+msgid "Unable to remove authselect configuration [%d]: %s"
+msgstr "Neizdevās noņemt authselect konfigurāciju [%d]: %s"
+
+#: src/lib/authselect.c:159
+msgid "Authselect configuration was successfully removed"
+msgstr "Authselect konfigurācija veiksmīgi noņemta"
+
+#: src/lib/authselect.c:198
+#, c-format
+msgid "Profile feature [%s] is no longer supported, removing it..."
+msgstr "Profila līdzeklis [%s] vairs netiek atbalstīts, tas tiek noņemts..."
+
+#: src/lib/authselect_backup.c:48
+#, c-format
+msgid "Unable to create backup directory [%s/%s] [%d]: %s"
+msgstr "Neizdevās izveidot dublējumu direktoriju [%s/%s] [%d]: %s"
+
+#: src/lib/authselect_backup.c:71
+#, c-format
+msgid "Unable to create backup directory [%s] [%d]: %s"
+msgstr "Neizdevās izveidot dublējumu direktoriju [%s] [%d]: %s"
+
+#: src/lib/authselect_backup.c:92
+#, c-format
+msgid "Creating temporary directory at [%s]"
+msgstr "Izveido pagaidu direktoriju [%s]"
+
+#: src/lib/authselect_backup.c:125 src/lib/authselect_profile.c:377
+#: src/lib/authselect_profile.c:457
+#, c-format
+msgid "There is no filename in [%s]"
+msgstr "[%s] nav faila nosaukuma"
+
+#: src/lib/authselect_backup.c:129
+#, c-format
+msgid "Copying [%s] to [%s/%s]"
+msgstr "Kopē [%s] uz [%s/%s]"
+
+#: src/lib/authselect_backup.c:133 src/lib/util/selinux.c:389
+#: src/lib/util/selinux.c:406
+#, c-format
+msgid "File [%s] does not exist"
+msgstr "Fails [%s] neeksistē"
+
+#: src/lib/authselect_backup.c:135 src/lib/authselect_backup.c:152
+#, c-format
+msgid "Unable to copy [%s] to [%s/%s] [%d]: %s"
+msgstr "Neizdevās nokopēt [%s] uz [%s/%s] [%d]: %s"
+
+#: src/lib/authselect_backup.c:175
+#, c-format
+msgid "Trying to backup authselect configuration to [%s]"
+msgstr "Mēģina dublēt authselect konfigurāciju uz [%s]"
+
+#: src/lib/authselect_backup.c:180
+#, c-format
+msgid "Trying to backup system configuration to [%s]"
+msgstr "Mēģina dublēt sistēmas konfigurāciju uz [%s]"
+
+#: src/lib/authselect_backup.c:185
+#, c-format
+msgid "Backup was successfully created at [%s]"
+msgstr "Dublējums veiksmīgi izveidots [%s]"
+
+#: src/lib/authselect_backup.c:189
+#, c-format
+msgid "Unable to create backup [%d]: %s"
+msgstr "Neizdevās izveidot dublējumu [%d]: %s"
+
+#: src/lib/authselect_backup.c:206
+msgid " does not exist."
+msgstr " neeksistē."
+
+#: src/lib/authselect_backup.c:209 src/lib/profiles/list.c:50
+#, c-format
+msgid "Unable to list directory [%s] [%d]: %s"
+msgstr "Neizdevās uzskaitīt direktoriju [%s] [%d]: %s"
+
+#: src/lib/authselect_backup.c:223
+#, c-format
+msgid "Removing backup [%s]"
+msgstr "Noņem dublējumu [%s]"
+
+#: src/lib/authselect_backup.c:232
+#, c-format
+msgid "Unable to delete directory [%s] [%d]: %s"
+msgstr "Neizdevās izdzēst direktoriju [%s] [%d]: %s"
+
+#: src/lib/authselect_backup.c:307
+#, c-format
+msgid "Unable to copy files [%d]: %s"
+msgstr "Neizdevās nokopēt failus [%d]: %s"
+
+#: src/lib/authselect_backup.c:313 src/lib/profiles/activate.c:78
+#, c-format
+msgid "Unable to create symbolic links [%d]: %s"
+msgstr "Neizdevās izveidot simboliskās saites [%d]: %s"
+
+#: src/lib/authselect_backup.c:319 src/lib/profiles/activate.c:84
+msgid "Dconf is not installed on your system"
+msgstr "Dconf jūsu sistēmā nav instalēts"
+
+#: src/lib/authselect_backup.c:321 src/lib/profiles/activate.c:86
+#, c-format
+msgid "Unable to update dconf database [%d]: %s"
+msgstr "Neizdevās atjaunināt dconf datubāzi [%d]: %s"
+
+#: src/lib/authselect_backup.c:344
+#, c-format
+msgid "Restoring configuration from backup [%s]"
+msgstr "Atjauno konfigurāciju no dublējuma [%s]"
+
+#: src/lib/authselect_backup.c:360
+#, c-format
+msgid "Backup [%s] contains authselect configuration"
+msgstr "Dublējums [%s] satur authselect konfigurāciju"
+
+#: src/lib/authselect_backup.c:363
+#, c-format
+msgid "Backup [%s] contains non-authselect configuration"
+msgstr "Dublējums [%s] satur konfigurāciju, kas nav no authselect"
+
+#: src/lib/authselect_backup.c:369
+#, c-format
+msgid "Unable to restore [%s] [%d]: %s"
+msgstr "Neizdevās atjaunot [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:104
+msgid "Unable to generate nsswitch.conf"
+msgstr "Neizdevās izveidot nsswitch.conf"
+
+#: src/lib/authselect_profile.c:111
+#, c-format
+msgid "Unable to find nsswitch maps [%d]: %s"
+msgstr "Neizdevās atrast nsswitch kartes [%d]: %s"
+
+#: src/lib/authselect_profile.c:132
+msgid "Unable to create array (out of memory)"
+msgstr "Neizdevās izveidot masīvu (atmiņa izsmelta)"
+
+#: src/lib/authselect_profile.c:141 src/lib/authselect_profile.c:150
+msgid "Unable to obtain feature list (out of memory)"
+msgstr "Neizdevās iegūt līdzekļu sarakstu (atmiņa izsmelta)"
+
+#: src/lib/authselect_profile.c:344
+#, c-format
+msgid "Creating empty profile at [%s]"
+msgstr "Izveido tukšu profilu [%s]"
+
+#: src/lib/authselect_profile.c:348 src/lib/authselect_profile.c:449
+#, c-format
+msgid "Unable to make path [%s] [%d]: %s"
+msgstr "Neizdevās izveidot ceļu [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:355 src/lib/authselect_profile.c:408
+#, c-format
+msgid "Unable to write to [%s] [%d]: %s"
+msgstr "Neizdevās rakstīt [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:385
+#, c-format
+msgid "Omitting [%s] since it does not exist in base profile"
+msgstr "[%s] tiek izlaists, jo tas neeksistē bāzes profilā"
+
+#: src/lib/authselect_profile.c:389
+#, c-format
+msgid "Unable to check presence of [%s] [%d]: %s"
+msgstr "Neizdevās pārbaudīt [%s] esamību [%d]: %s"
+
+#: src/lib/authselect_profile.c:397
+#, c-format
+msgid "Unable to create symbolic link [%s] to [%s] [%d]: %s"
+msgstr "Neizdevās izveidot simbolisko saiti [%s] uz [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:430
+#, c-format
+msgid "Creating new profile from \"%s\" at [%s]"
+msgstr "Izveido jaunu profilu no „%s” [%s]"
+
+#: src/lib/authselect_profile.c:434
+#, c-format
+msgid "Unable to read base profile [%s] [%d]: %s"
+msgstr "Neizdevās nolasīt bāzes profilu [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:442
+msgid "Unable to resolve symbolic links names"
+msgstr "Neizdevās atrisināt simbolisko saišu nosaukumus"
+
+#: src/lib/authselect_profile.c:467 src/lib/authselect_profile.c:480
+#: src/lib/authselect_profile.c:494
+#, c-format
+msgid "Unable to create [%s] [%d]: %s"
+msgstr "Neizdevās izveidot [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:502
+#, c-format
+msgid "Unknown file name [%s]"
+msgstr "Nezināms faila nosaukums [%s]"
+
+#: src/lib/authselect_profile.c:529
+msgid "Name can not be empty"
+msgstr "Nosaukums nevar būt tukšs"
+
+#: src/lib/authselect_profile.c:541
+msgid "Default profile can not be created"
+msgstr "Noklusējuma profilu nevar izveidot"
+
+#: src/lib/authselect_profile.c:544
+msgid "Value AUTHSELECT_PROFILE_ANY is invalid in this context"
+msgstr "Vērtība AUTHSELECT_PROFILE_ANY šajā kontekstā nav derīga"
+
+#: src/lib/authselect_profile.c:549
+msgid "Unable to create profile path: out of memory"
+msgstr "Neizdevās izveidot profila ceļu: atmiņa izsmelta"
+
+#: src/lib/authselect_profile.c:555
+#, c-format
+msgid "Profile \"%s\" already exists at [%s]"
+msgstr "Profils „%s” jau eksistē [%s]"
+
+#: src/lib/authselect_profile.c:559
+#, c-format
+msgid "Unable to access [%s] [%d]: %s"
+msgstr "Neizdevās piekļūt [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:565
+msgid "Unable to create file name: out of memory"
+msgstr "Neizdevās izveidot faila nosaukumu: atmiņa izsmelta"
+
+#: src/lib/authselect_profile.c:573
+#, c-format
+msgid "Unable to create empty profile [%d]: %s"
+msgstr "Neizdevās izveidot tukšu profilu [%d]: %s"
+
+#: src/lib/authselect_profile.c:582
+#, c-format
+msgid "Unable to create profile [%d]: %s"
+msgstr "Neizdevās izveidot profilu [%d]: %s"
+
+#: src/lib/files/config.c:152
+msgid "Checking if all required directories are writable."
+msgstr "Pārbauda, vai visās nepieciešamajās direktorijās var rakstīt."
+
+#: src/lib/files/config.c:157
+#, c-format
+msgid "Unable to get path to %s parent directory!"
+msgstr "Neizdevās iegūt ceļu uz %s vecākdirektoriju!"
+
+#: src/lib/files/config.c:164
+#, c-format
+msgid "Creating path [%s]"
+msgstr "Izveido ceļu [%s]"
+
+#: src/lib/files/config.c:168
+#, c-format
+msgid "Unable to create path [%s] [%d]: %s"
+msgstr "Neizdevās izveidot ceļu [%s] [%d]: %s"
+
+#: src/lib/files/config.c:173
+#, c-format
+msgid "Directory [%s] does not exist, please create it!"
+msgstr "Direktorija [%s] neeksistē, lūdzu, izveidojiet to!"
+
+#: src/lib/files/config.c:176
+#, c-format
+msgid "Unable to access directory [%s] in [WX] mode!"
+msgstr "Neizdevās piekļūt direktorijai [%s] režīmā [WX]!"
+
+#: src/lib/files/config.c:195
+#, c-format
+msgid "Unable to load profile [%s] [%d]: %s"
+msgstr "Neizdevās ielādēt profilu [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:41
+#, c-format
+msgid "Creating symbolic link [%s] to [%s]"
+msgstr "Izveido simbolisko saiti [%s] uz [%s]"
+
+#: src/lib/files/symlinks.c:47
+#, c-format
+msgid "Unable to overwrite file [%s] [%d]: %s"
+msgstr "Neizdevās pārrakstīt failu [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:55
+#, c-format
+msgid "Unable to create symbolic link [%s] [%d]: %s"
+msgstr "Neizdevās izveidot simbolisko saiti [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:79
+#, c-format
+msgid "Validating link [%s]"
+msgstr "Validē saiti [%s]"
+
+#: src/lib/files/symlinks.c:83
+#, c-format
+msgid "Unable to validate link [%s] [%d]: %s"
+msgstr "Neizdevās validēt saiti [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:90
+#, c-format
+msgid "[%s] was not created by authselect!"
+msgstr "[%s] nav izveidojis authselect!"
+
+#: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:153
+#: src/lib/files/system.c:311
+#, c-format
+msgid "Error while trying to access file [%s] [%d]: %s"
+msgstr "Kļūda, mēģinot piekļūt failam [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:121
+#, c-format
+msgid "Unable to check file [%s] [%d]: %s"
+msgstr "Neizdevās pārbaudīt failu [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:128
+#, c-format
+msgid "Symbolic link [%s] to [%s] still exists!"
+msgstr "Simboliskā saite [%s] uz [%s] joprojām eksistē!"
+
+#: src/lib/files/symlinks.c:149
+#, c-format
+msgid "File [%s] exists but it needs to be overwritten!"
+msgstr "Fails [%s] eksistē, bet tas ir jāpārraksta!"
+
+#: src/lib/files/symlinks.c:191
+#, c-format
+msgid "Skipping [%s] because it is not an authselect file"
+msgstr "[%s] tiek izlaists, jo tas nav authselect fails"
+
+#: src/lib/files/system.c:74 src/lib/profiles/read.c:162
+#, c-format
+msgid "Reading file [%s/%s]"
+msgstr "Nolasa failu [%s/%s]"
+
+#: src/lib/files/system.c:82 src/lib/profiles/read.c:168
+#: src/lib/profiles/read.c:173
+#, c-format
+msgid "Unable to read file [%s/%s] [%d]: %s"
+msgstr "Neizdevās nolasīt failu [%s/%s] [%d]: %s"
+
+#: src/lib/files/system.c:151
+#, c-format
+msgid "Unable to generate files [%d]: %s"
+msgstr "Neizdevās izveidot failus [%d]: %s"
+
+#: src/lib/files/system.c:165 src/lib/util/selinux.c:410
+#, c-format
+msgid "Writing temporary file for [%s]"
+msgstr "Raksta pagaidu failu [%s]"
+
+#: src/lib/files/system.c:168
+#, c-format
+msgid "Unable to write temporary file [%s] [%d]: %s"
+msgstr "Neizdevās ierakstīt pagaidu failu [%s] [%d]: %s"
+
+#: src/lib/files/system.c:173
+#, c-format
+msgid "Temporary file is named [%s]"
+msgstr "Pagaidu faila nosaukums ir [%s]"
+
+#: src/lib/files/system.c:184 src/lib/util/selinux.c:438
+#, c-format
+msgid "Renaming [%s] to [%s]"
+msgstr "Pārdēvē [%s] par [%s]"
+
+#: src/lib/files/system.c:189 src/lib/util/selinux.c:442
+#, c-format
+msgid "Unable to rename [%s] to [%s] [%d]: %s"
+msgstr "Neizdevās pārdēvēt [%s] par [%s] [%d]: %s"
+
+#: src/lib/files/system.c:263
+#, c-format
+msgid "Validating file [%s]"
+msgstr "Validē failu [%s]"
+
+#: src/lib/files/system.c:268
+#, c-format
+msgid "Unable to check file mode of [%s] [%d]: %s"
+msgstr "Neizdevās pārbaudīt [%s] faila režīmu [%d]: %s"
+
+#: src/lib/files/system.c:288
+#, c-format
+msgid "File [%s] was modified outside authselect!"
+msgstr "Fails [%s] ir mainīts ārpus authselect!"
+
+#: src/lib/files/system.c:307
+#, c-format
+msgid "File [%s] is still present"
+msgstr "Fails [%s] joprojām ir klāt"
+
+#: src/lib/files/system.c:332 src/lib/files/system.c:342
+#, c-format
+msgid "Unable to delete [%s] [%d]: %s"
+msgstr "Neizdevās izdzēst [%s] [%d]: %s"
+
+#: src/lib/profiles/activate.c:44
+#, c-format
+msgid "%s update failed: %d"
+msgstr "%s atjaunināšana neizdevās: %d"
+
+#: src/lib/profiles/activate.c:59
+msgid "Some directories are not accessible by authselect!"
+msgstr "Dažas direktorijas authselect nav pieejamas!"
+
+#: src/lib/profiles/activate.c:65
+#, c-format
+msgid "Unable to write generated system files [%d]: %s"
+msgstr "Neizdevās ierakstīt izveidotos sistēmas failus [%d]: %s"
+
+#: src/lib/profiles/activate.c:72
+#, c-format
+msgid "Unable to write configuration [%d]: %s"
+msgstr "Neizdevās ierakstīt konfigurāciju [%d]: %s"
+
+#: src/lib/profiles/list.c:42
+#, c-format
+msgid "Reading profile directory [%s]"
+msgstr "Nolasa profilu direktoriju [%s]"
+
+#: src/lib/profiles/list.c:47
+#, c-format
+msgid "Directory [%s] is missing!"
+msgstr "Trūkst direktorijas [%s]!"
+
+#: src/lib/profiles/list.c:69
+#, c-format
+msgid "Found profile [%s]"
+msgstr "Atrasts profils [%s]"
+
+#: src/lib/profiles/list.c:151
+#, c-format
+msgid "Unable to list profiles [%d]: %s"
+msgstr "Neizdevās uzskaitīt profilus [%d]: %s"
+
+#: src/lib/profiles/read.c:83
+#, c-format
+msgid "Unable to open directory [%s] [%d]: %s"
+msgstr "Neizdevās atvērt direktoriju [%s] [%d]: %s"
+
+#: src/lib/profiles/read.c:106
+#, c-format
+msgid "Looking up profile [%s]"
+msgstr "Meklē profilu [%s]"
+
+#: src/lib/profiles/read.c:110
+msgid "Locations array is NULL"
+msgstr "Atrašanās vietu masīvs ir NULL"
+
+#: src/lib/profiles/read.c:133
+#, c-format
+msgid "Profile [%s] is a custom profile"
+msgstr "Profils [%s] ir pielāgots profils"
+
+#: src/lib/profiles/read.c:135
+#, c-format
+msgid "Profile [%s] is a vendor profile"
+msgstr "Profils [%s] ir ražotāja profils"
+
+#: src/lib/profiles/read.c:137
+#, c-format
+msgid "Profile [%s] is a default profile"
+msgstr "Profils [%s] ir noklusējuma profils"
+
+#: src/lib/profiles/read.c:140
+#, c-format
+msgid "Profile [%s] found at [%s]"
+msgstr "Profils [%s] atrasts [%s]"
+
+#: src/lib/profiles/read.c:148
+#, c-format
+msgid "Profile [%s] was not found"
+msgstr "Profils [%s] netika atrasts"
+
+#: src/lib/profiles/read.c:203 src/lib/profiles/read.c:222
+#, c-format
+msgid "Profile [%s] does not contain a name in [%s]!"
+msgstr "Profilam [%s] nav nosaukuma [%s]!"
+
+#: src/lib/util/dir.c:77 src/lib/util/dir.c:83
+#, c-format
+msgid "Unable to get basename of [%s]"
+msgstr "Neizdevās iegūt [%s] bāzes nosaukumu"
+
+#: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
+#: src/lib/util/file.c:199 src/cli/main.c:875
+#, c-format
+msgid "Unable to stat [%s] [%d]: %s"
+msgstr "Neizdevās izpildīt stat [%s] [%d]: %s"
+
+#: src/lib/util/dir.c:130
+#, c-format
+msgid "Unable to stat directory [%d]: %s"
+msgstr "Neizdevās izpildīt stat direktorijai [%d]: %s"
+
+#: src/lib/util/dir.c:313
+#, c-format
+msgid "Removing file [%s/%s]"
+msgstr "Noņem failu [%s/%s]"
+
+#: src/lib/util/dir.c:321
+#, c-format
+msgid "Removing directory [%s]"
+msgstr "Noņem direktoriju [%s]"
+
+#: src/lib/util/file.c:43
+msgid "Internal error: stat cannot be NULL!"
+msgstr "Iekšēja kļūda: stat nevar būt NULL!"
+
+#: src/lib/util/file.c:51
+#, c-format
+msgid "[%s] is not a directory!"
+msgstr "[%s] nav direktorija!"
+
+#: src/lib/util/file.c:54
+#, c-format
+msgid "[%s] is not a regular file!"
+msgstr "[%s] nav parasts fails!"
+
+#: src/lib/util/file.c:57
+#, c-format
+msgid "[%s] is not a symbolic link!"
+msgstr "[%s] nav simboliskā saite!"
+
+#: src/lib/util/file.c:60
+#, c-format
+msgid "[%s] has wrong type [%.7o], expected [%.7o]!"
+msgstr "[%s] ir nepareizs tips [%.7o], gaidīts [%.7o]!"
+
+#: src/lib/util/file.c:87
+#, c-format
+msgid "[%s] has wrong mode [%.4o], expected [%.4o]!"
+msgstr "[%s] ir nepareizs režīms [%.4o], gaidīts [%.4o]!"
+
+#: src/lib/util/file.c:93
+#, c-format
+msgid "[%s] has wrong owner [%u], expected [%u]!"
+msgstr "[%s] ir nepareizs īpašnieks [%u], gaidīts [%u]!"
+
+#: src/lib/util/file.c:99
+#, c-format
+msgid "[%s] has wrong group [%u], expected [%u]!"
+msgstr "[%s] ir nepareiza grupa [%u], gaidīta [%u]!"
+
+#: src/lib/util/file.c:121
+#, c-format
+msgid "[%s] does not exist!"
+msgstr "[%s] neeksistē!"
+
+#: src/lib/util/file.c:164 src/lib/util/file.c:211
+#, c-format
+msgid "Unable to read link destination [%s] [%d]: %s"
+msgstr "Neizdevās nolasīt saites mērķi [%s] [%d]: %s"
+
+#: src/lib/util/file.c:170
+#, c-format
+msgid "Link [%s] does not point to [%s]"
+msgstr "Saite [%s] nenorāda uz [%s]"
+
+#: src/lib/util/file.c:218 src/lib/util/file.c:220
+#, c-format
+msgid "Link [%s] points to [%s]"
+msgstr "Saite [%s] norāda uz [%s]"
+
+#: src/lib/util/file.c:281
+msgid "Internal error: filepath cannot be NULL!"
+msgstr "Iekšēja kļūda: faila ceļš nevar būt NULL!"
+
+#: src/lib/util/file.c:313
+#, c-format
+msgid "Unable to get parent directory of [%s] [%d]: %s"
+msgstr "Neizdevās iegūt [%s] vecākdirektoriju [%d]: %s"
+
+#: src/lib/util/file.c:524 src/lib/util/textfile.c:175
+#, c-format
+msgid "Unable to chmod file [%s] [%d]: %s"
+msgstr "Neizdevās izpildīt chmod failam [%s] [%d]: %s"
+
+#: src/lib/util/file.c:531
+#, c-format
+msgid "Unable to chown file [%s] [%d]: %s"
+msgstr "Neizdevās izpildīt chown failam [%s] [%d]: %s"
+
+#: src/lib/util/selinux.c:48
+#, c-format
+msgid "Unable to create selabel handle [%d]: %s"
+msgstr "Neizdevās izveidot selabel rokturi [%d]: %s"
+
+#: src/lib/util/selinux.c:57
+#, c-format
+msgid "Unable to lookup selinux context [%d]: %s"
+msgstr "Neizdevās uzmeklēt selinux kontekstu [%d]: %s"
+
+#: src/lib/util/selinux.c:61
+#, c-format
+msgid "Found default selinux context for [%s]: %s"
+msgstr "Atrasts [%s] noklusējuma selinux konteksts: %s"
+
+#: src/lib/util/selinux.c:86
+#, c-format
+msgid "Unable to obtain selinux context for [%s] [%d]: %s"
+msgstr "Neizdevās iegūt [%s] selinux kontekstu [%d]: %s"
+
+#: src/lib/util/selinux.c:93
+msgid "not set"
+msgstr "nav iestatīts"
+
+#: src/lib/util/selinux.c:92
+#, c-format
+msgid "Found selinux context for [%s]: %s"
+msgstr "Atrasts [%s] selinux konteksts: %s"
+
+#: src/lib/util/selinux.c:117 src/lib/util/selinux.c:185
+#: src/lib/util/selinux.c:253
+msgid "Unable to get current fscreate selinux context!"
+msgstr "Neizdevās iegūt pašreizējo fscreate selinux kontekstu!"
+
+#: src/lib/util/selinux.c:123 src/lib/util/selinux.c:191
+#: src/lib/util/selinux.c:259
+#, c-format
+msgid "Unable to get default selinux context for [%s] [%d]: %s!"
+msgstr "Neizdevās iegūt [%s] noklusējuma selinux kontekstu [%d]: %s!"
+
+#: src/lib/util/selinux.c:131 src/lib/util/selinux.c:199
+#: src/lib/util/selinux.c:267
+msgid "Unable to set fscreate selinux context!"
+msgstr "Neizdevās iestatīt fscreate selinux kontekstu!"
+
+#: src/lib/util/selinux.c:141 src/lib/util/selinux.c:209
+#: src/lib/util/selinux.c:277
+msgid "Unable to restore fscreate selinux context!"
+msgstr "Neizdevās atjaunot fscreate selinux kontekstu!"
+
+#: src/lib/util/selinux.c:390
+#, c-format
+msgid "Writing empty temporary file for [%s]"
+msgstr "Raksta tukšu pagaidu failu [%s]"
+
+#: src/lib/util/selinux.c:399
+#, c-format
+msgid ""
+"File [%s] should exist but is missing. It is not safe to delete [%s]. "
+"Aborting."
+msgstr ""
+"Failam [%s] jāeksistē, bet tā nav. Nav droši dzēst [%s]. Darbība tiek "
+"pārtraukta."
+
+#: src/lib/util/selinux.c:433
+#, c-format
+msgid "Removing [%s]"
+msgstr "Noņem [%s]"
+
+#: src/lib/util/template.c:143 src/lib/util/template.c:205
+#: src/lib/util/template.c:281
+msgid "Invalid operator!"
+msgstr "Nederīgs operators!"
+
+#: src/lib/util/template.c:450 src/lib/util/template.c:573
+#: src/lib/util/template.c:624
+#, c-format
+msgid "Unable to compile regular expression: regex error %d"
+msgstr "Neizdevās kompilēt regulāro izteiksmi: regulārās izteiksmes kļūda %d"
+
+#: src/lib/util/template.c:460 src/lib/util/template.c:634
+#, c-format
+msgid "Unable to process match [%d]: %s"
+msgstr "Neizdevās apstrādāt atbilstību [%d]: %s"
+
+#: src/lib/util/template.c:485
+#, c-format
+msgid "Unable to process operator [%d]: %s"
+msgstr "Neizdevās apstrādāt operatoru [%d]: %s"
+
+#: src/lib/util/template.c:500 src/lib/util/template.c:650
+#, c-format
+msgid "Unable to search string: regex error %d"
+msgstr "Neizdevās meklēt virkni: regulārās izteiksmes kļūda %d"
+
+#: src/lib/util/template.c:532
+#, c-format
+msgid "Unable to generate template [%d]: %s"
+msgstr "Neizdevās izveidot veidni [%d]: %s"
+
+#: src/lib/util/template.c:580
+#, c-format
+msgid "Unable to find new match: regex error %d"
+msgstr "Neizdevās atrast jaunu atbilstību: regulārās izteiksmes kļūda %d"
+
+#: src/lib/util/template.c:705
+#, c-format
+msgid "Unable to create temporary file for [%s] [%d]: %s"
+msgstr "Neizdevās izveidot pagaidu failu [%s] [%d]: %s"
+
+#: src/lib/util/textfile.c:56
+#, c-format
+msgid "File [%s] is bigger than %uKiB!"
+msgstr "Fails [%s] ir lielāks par %u KiB!"
+
+#: src/lib/util/textfile.c:85
+#, c-format
+msgid "Unable to read file [%s] [%d]: %s"
+msgstr "Neizdevās nolasīt failu [%s] [%d]: %s"
+
+#: src/lib/util/textfile.c:158
+#, c-format
+msgid "Unable to open file [%s] [%d]: %s"
+msgstr "Neizdevās atvērt failu [%s] [%d]: %s"
+
+#: src/lib/util/textfile.c:167
+#, c-format
+msgid "Unable to write data [%s] [%d]: %s"
+msgstr "Neizdevās ierakstīt datus [%s] [%d]: %s"
+
+#: src/cli/cli_tool.c:72
+#, c-format
+msgid "Common options:\n"
+msgstr "Kopējās opcijas:\n"
+
+#: src/cli/cli_tool.c:74 src/cli/cli_tool.c:96
+msgid "Print error messages"
+msgstr "Izvadīt kļūdu ziņojumus"
+
+#: src/cli/cli_tool.c:76 src/cli/cli_tool.c:97
+msgid "Print trace messages"
+msgstr "Izvadīt trasēšanas ziņojumus"
+
+#: src/cli/cli_tool.c:78 src/cli/cli_tool.c:98
+msgid "Print warning messages"
+msgstr "Izvadīt brīdinājumu ziņojumus"
+
+#: src/cli/cli_tool.c:80
+#, c-format
+msgid "Help options:\n"
+msgstr "Palīdzības opcijas:\n"
+
+#: src/cli/cli_tool.c:82
+msgid "Show this for a command"
+msgstr "Parādīt šo komandai"
+
+#: src/cli/cli_tool.c:84
+msgid "Show brief usage message for a command"
+msgstr "Parādīt komandas īsu lietošanas ziņojumu"
+
+#: src/cli/cli_tool.c:173
+#, c-format
+msgid ""
+"Usage:\n"
+"%s COMMAND COMMAND-ARGS\n"
+"\n"
+msgstr ""
+"Lietošana:\n"
+"%s KOMANDA KOMANDAS-ARGUMENTI\n"
+"\n"
+
+#: src/cli/cli_tool.c:174
+#, c-format
+msgid "Available commands:\n"
+msgstr "Pieejamās komandas:\n"
+
+#: src/cli/cli_tool.c:196
+#, c-format
+msgid "\n"
+msgstr "\n"
+
+#: src/cli/cli_tool.c:230
+#, c-format
+msgid "Authselect command '%s' can only be run as root!\n"
+msgstr "Authselect komandu „%s” var palaist tikai root!\n"
+
+#: src/cli/cli_tool.c:247
+msgid "Bug: commands can't be NULL!\n"
+msgstr "Kļūda: komandas nevar būt NULL!\n"
+
+#: src/cli/cli_tool.c:310
+msgid "Command options:"
+msgstr "Komandas opcijas:"
+
+#: src/cli/cli_tool.c:312
+msgid "Common options:"
+msgstr "Kopējās opcijas:"
+
+#: src/cli/cli_tool.c:331 src/cli/cli_tool.c:334
+msgid "[OPTIONS...]"
+msgstr "[OPCIJAS...]"
+
+#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:867
+msgid "Out of memory!"
+msgstr "Atmiņa izsmelta!"
+
+#: src/cli/cli_tool.c:358
+#, c-format
+msgid ""
+"Invalid option %s: %s\n"
+"\n"
+msgstr ""
+"Nederīga opcija %s: %s\n"
+"\n"
+
+#: src/cli/cli_tool.c:370
+#, c-format
+msgid ""
+"Missing option: %s\n"
+"\n"
+msgstr ""
+"Trūkst opcijas: %s\n"
+"\n"
+
+#: src/cli/cli_tool.c:380
+#, c-format
+msgid ""
+"Only one free argument is expected!\n"
+"\n"
+msgstr ""
+"Tiek gaidīts tikai viens brīvais arguments!\n"
+"\n"
+
+#: src/cli/cli_tool.c:395
+#, c-format
+msgid ""
+"Unexpected parameter: %s\n"
+"\n"
+msgstr ""
+"Negaidīts parametrs: %s\n"
+"\n"
+
+#: src/cli/cli_tool.c:407
+#, c-format
+msgid ""
+"At least one option is required!\n"
+"\n"
+msgstr ""
+"Nepieciešama vismaz viena opcija!\n"
+"\n"
+
+#: src/cli/main.c:76 src/cli/main.c:432 src/cli/main.c:475
+msgid "Profile identifier."
+msgstr "Profila identifikators."
+
+#: src/cli/main.c:79 src/cli/main.c:248 src/cli/main.c:293 src/cli/main.c:342
+#: src/cli/main.c:390 src/cli/main.c:435 src/cli/main.c:478 src/cli/main.c:654
+#: src/cli/main.c:731 src/cli/main.c:760 src/cli/main.c:802 src/cli/main.c:842
+#: src/cli/main.c:907 src/cli/main.c:933
+msgid "Unable to parse command arguments"
+msgstr "Neizdevās parsēt komandas argumentus"
+
+#: src/cli/main.c:135
+msgid "Unable to backup current configuration!\n"
+msgstr "Neizdevās dublēt pašreizējo konfigurāciju!\n"
+
+#: src/cli/main.c:139
+#, c-format
+msgid "Backup stored at %s\n"
+msgstr "Dublējums saglabāts %s\n"
+
+#: src/cli/main.c:161
+msgid "Enforce changes"
+msgstr "Piespiest izmaiņas"
+
+#: src/cli/main.c:162 src/cli/main.c:241 src/cli/main.c:644 src/cli/main.c:722
+msgid "Backup system files before activating profile (generate unique name)"
+msgstr ""
+"Pirms profila aktivizēšanas dublēt sistēmas failus (ģenerēt unikālu "
+"nosaukumu)"
+
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:645 src/cli/main.c:723
+msgid "Backup system files before activating profile"
+msgstr "Pirms profila aktivizēšanas dublēt sistēmas failus"
+
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:645 src/cli/main.c:723
+msgid "NAME"
+msgstr "NOSAUKUMS"
+
+#: src/cli/main.c:164
+msgid "Do not backup system files when --force is set"
+msgstr "Nedublēt sistēmas failus, ja iestatīts --force"
+
+#: src/cli/main.c:165 src/cli/main.c:646
+msgid "Do not print profile requirements"
+msgstr "Neizvadīt profila prasības"
+
+#: src/cli/main.c:176 src/cli/main.c:405 src/cli/main.c:441 src/cli/main.c:484
+#: src/cli/main.c:516 src/cli/main.c:673
+#, c-format
+msgid "Unable to get profile information [%d]: %s"
+msgstr "Neizdevās iegūt profila informāciju [%d]: %s"
+
+#: src/cli/main.c:184 src/cli/main.c:524 src/cli/main.c:681
+msgid "Unable to read profile requirements!"
+msgstr "Neizdevās nolasīt profila prasības!"
+
+#: src/cli/main.c:198
+msgid ""
+"\n"
+"Some unexpected changes to the configuration were detected.\n"
+"Use --force parameter if you want to overwrite these changes.\n"
+msgstr ""
+"\n"
+"Konstatētas dažas negaidītas konfigurācijas izmaiņas.\n"
+"Izmantojiet parametru --force, ja vēlaties šīs izmaiņas pārrakstīt.\n"
+
+#: src/cli/main.c:203
+#, c-format
+msgid "Unable to activate profile [%d]: %s\n"
+msgstr "Neizdevās aktivizēt profilu [%d]: %s\n"
+
+#: src/cli/main.c:208
+#, c-format
+msgid "Profile \"%s\" was selected.\n"
+msgstr "Atlasīts profils „%s”.\n"
+
+#: src/cli/main.c:211
+msgid "The following nsswitch maps are overwritten by the profile:\n"
+msgstr "Profils pārraksta šīs nsswitch kartes:\n"
+
+#: src/cli/main.c:214
+#, c-format
+msgid "- %s\n"
+msgstr "- %s\n"
+
+#: src/cli/main.c:219
+#, c-format
+msgid ""
+"\n"
+"%s\n"
+msgstr ""
+"\n"
+"%s\n"
+
+#: src/cli/main.c:260
+msgid "Changes were successfully applied.\n"
+msgstr "Izmaiņas veiksmīgi lietotas.\n"
+
+#: src/cli/main.c:263 src/cli/main.c:299 src/cli/main.c:663
+msgid "No existing configuration detected.\n"
+msgstr "Esoša konfigurācija nav konstatēta.\n"
+
+#: src/cli/main.c:266
+msgid ""
+"Some unexpected changes to the configuration were detected. Use 'select' "
+"command instead.\n"
+msgstr ""
+"Konstatētas dažas negaidītas konfigurācijas izmaiņas. Tā vietā izmantojiet "
+"komandu 'select'.\n"
+
+#: src/cli/main.c:270
+#, c-format
+msgid "Unable to apply changes [%d]: %s\n"
+msgstr "Neizdevās lietot izmaiņas [%d]: %s\n"
+
+#: src/cli/main.c:287
+msgid "Print command parameters instead of formatted output"
+msgstr "Formatētas izvades vietā izvadīt komandas parametrus"
+
+#: src/cli/main.c:302 src/cli/main.c:666
+#, c-format
+msgid "Unable to get current configuration [%d]: %s"
+msgstr "Neizdevās iegūt pašreizējo konfigurāciju [%d]: %s"
+
+#: src/cli/main.c:316
+#, c-format
+msgid "Profile ID: %s\n"
+msgstr "Profila ID: %s\n"
+
+#: src/cli/main.c:317
+msgid "Enabled features:"
+msgstr "Iespējotie līdzekļi:"
+
+#: src/cli/main.c:320
+msgid " None\n"
+msgstr " Nav\n"
+
+#: src/cli/main.c:348
+#, c-format
+msgid "Unable to test current configuration [%d]: %s"
+msgstr "Neizdevās pārbaudīt pašreizējo konfigurāciju [%d]: %s"
+
+#: src/cli/main.c:355
+msgid ""
+"Current configuration is not valid. It was probably modified outside "
+"authselect."
+msgstr ""
+"Pašreizējā konfigurācija nav derīga. Visticamāk, tā mainīta ārpus authselect."
+
+#: src/cli/main.c:362
+msgid "Current configuration is valid."
+msgstr "Pašreizējā konfigurācija ir derīga."
+
+#: src/cli/main.c:365
+msgid "No configuration detected."
+msgstr "Konfigurācija nav konstatēta."
+
+#: src/cli/main.c:369
+msgid "System was not configured with authselect."
+msgstr "Sistēma nav konfigurēta ar authselect."
+
+#: src/cli/main.c:396
+msgid "Unable to get profile list!"
+msgstr "Neizdevās iegūt profilu sarakstu!"
+
+#: src/cli/main.c:449
+#, c-format
+msgid "Unable to get profile features [%d]: %s"
+msgstr "Neizdevās iegūt profila līdzekļus [%d]: %s"
+
+#: src/cli/main.c:564
+msgid "Print content of all files"
+msgstr "Izvadīt visu failu saturu"
+
+#: src/cli/main.c:565
+msgid "Print nsswitch.conf content"
+msgstr "Izvadīt nsswitch.conf saturu"
+
+#: src/cli/main.c:566
+msgid "Print system-auth content"
+msgstr "Izvadīt system-auth saturu"
+
+#: src/cli/main.c:567
+msgid "Print password-auth content"
+msgstr "Izvadīt password-auth saturu"
+
+#: src/cli/main.c:568
+msgid "Print smartcard-auth content"
+msgstr "Izvadīt smartcard-auth saturu"
+
+#: src/cli/main.c:569
+msgid "Print fingerprint-auth content"
+msgstr "Izvadīt fingerprint-auth saturu"
+
+#: src/cli/main.c:570
+msgid "Print switchable-auth content"
+msgstr "Izvadīt switchable-auth saturu"
+
+#: src/cli/main.c:571
+msgid "Print postlogin content"
+msgstr "Izvadīt postlogin saturu"
+
+#: src/cli/main.c:572
+msgid "Print dconf database content"
+msgstr "Izvadīt dconf datubāzes saturu"
+
+#: src/cli/main.c:573
+msgid "Print dconf lock content"
+msgstr "Izvadīt dconf bloķēšanas saturu"
+
+#: src/cli/main.c:601
+#, c-format
+msgid "Unable to get generated content [%d]: %s"
+msgstr "Neizdevās iegūt izveidoto saturu [%d]: %s"
+
+#: src/cli/main.c:620
+#, c-format
+msgid ""
+"File %s: Empty\n"
+"\n"
+msgstr ""
+"Fails %s: tukšs\n"
+"\n"
+
+#: src/cli/main.c:622
+#, c-format
+msgid ""
+"File %s:\n"
+"%s\n"
+"\n"
+msgstr ""
+"Fails %s:\n"
+"%s\n"
+"\n"
+
+#: src/cli/main.c:651
+msgid "Feature to enable."
+msgstr "Iespējojamais līdzeklis."
+
+#: src/cli/main.c:688
+#, c-format
+msgid "Unable to backup current configuration [%d]: %s\n"
+msgstr "Neizdevās dublēt pašreizējo konfigurāciju [%d]: %s\n"
+
+#: src/cli/main.c:695
+#, c-format
+msgid "Unable to enable feature [%d]: %s\n"
+msgstr "Neizdevās iespējot līdzekli [%d]: %s\n"
+
+#: src/cli/main.c:700
+#, c-format
+msgid "%s\n"
+msgstr "%s\n"
+
+#: src/cli/main.c:728
+msgid "Feature to disable."
+msgstr "Atspējojamais līdzeklis."
+
+#: src/cli/main.c:742
+#, c-format
+msgid "Unable to disable feature [%d]: %s\n"
+msgstr "Neizdevās atspējot līdzekli [%d]: %s\n"
+
+#: src/cli/main.c:757
+msgid "Feature to check."
+msgstr "Pārbaudāmais līdzeklis."
+
+#: src/cli/main.c:766
+#, c-format
+msgid "Unable to check feature [%d]: %s\n"
+msgstr "Neizdevās pārbaudīt līdzekli [%d]: %s\n"
+
+#: src/cli/main.c:787
+msgid "Create new profile as a vendor profile instead of a custom profile"
+msgstr "Izveidot jauno profilu kā ražotāja profilu, nevis pielāgotu profilu"
+
+#: src/cli/main.c:788
+msgid "ID of a profile that should be used as a base for the new profile"
+msgstr "Profila ID, ko izmantot par jaunā profila pamatu"
+
+#: src/cli/main.c:789
+msgid ""
+"Base new profile on a default profile even if vendor profile with the same "
+"name exists"
+msgstr ""
+"Balstīt jauno profilu uz noklusējuma profilu arī tad, ja eksistē ražotāja "
+"profils ar tādu pašu nosaukumu"
+
+#: src/cli/main.c:790
+msgid "Symlink meta files from the base profile instead of copying them"
+msgstr ""
+"Kopēšanas vietā izveidot simboliskās saites uz bāzes profila metafailiem"
+
+#: src/cli/main.c:791
+msgid "Symlink nsswitch files from the base profile instead of copying them"
+msgstr ""
+"Kopēšanas vietā izveidot simboliskās saites uz bāzes profila nsswitch failiem"
+
+#: src/cli/main.c:792
+msgid "Symlink pam files from the base profile instead of copying them"
+msgstr ""
+"Kopēšanas vietā izveidot simboliskās saites uz bāzes profila pam failiem"
+
+#: src/cli/main.c:793
+msgid "Symlink dconf files from the base profile instead of copying them"
+msgstr ""
+"Kopēšanas vietā izveidot simboliskās saites uz bāzes profila dconf failiem"
+
+#: src/cli/main.c:794
+msgid "Symlink specific file (can be set multiple times)"
+msgstr ""
+"Izveidot simbolisko saiti konkrētam failam (var iestatīt vairākas reizes)"
+
+#: src/cli/main.c:799
+msgid "New profile name."
+msgstr "Jaunā profila nosaukums."
+
+#: src/cli/main.c:809
+#, c-format
+msgid "Unable to create new profile [%d]: %s\n"
+msgstr "Neizdevās izveidot jaunu profilu [%d]: %s\n"
+
+#: src/cli/main.c:813
+#, c-format
+msgid "New profile was created at %s\n"
+msgstr "Jauns profils izveidots %s\n"
+
+#: src/cli/main.c:836
+msgid "Print backup names without any formatting and additional information"
+msgstr "Izvadīt dublējumu nosaukumus bez formatējuma un papildu informācijas"
+
+#: src/cli/main.c:848
+msgid "Unable to list available backups!"
+msgstr "Neizdevās uzskaitīt pieejamos dublējumus!"
+
+#: src/cli/main.c:885
+#, c-format
+msgid "%-*s (created at %s)\n"
+msgstr "%-*s (izveidots %s)\n"
+
+#: src/cli/main.c:904
+msgid "Name of the backup to remove."
+msgstr "Noņemamā dublējuma nosaukums."
+
+#: src/cli/main.c:913
+#, c-format
+msgid "Unable to remove backup [%s] [%d]: %s\n"
+msgstr "Neizdevās noņemt dublējumu [%s] [%d]: %s\n"
+
+#: src/cli/main.c:930
+msgid "Name of the backup to restore from."
+msgstr "Atjaunojamā dublējuma nosaukums."
+
+#: src/cli/main.c:939
+#, c-format
+msgid "Unable to restore backup [%s] [%d]: %s\n"
+msgstr "Neizdevās atjaunot dublējumu [%s] [%d]: %s\n"
+
+#: src/cli/main.c:955
+#, c-format
+msgid "Unable to uninstall authselect configuration [%d]: %s\n"
+msgstr "Neizdevās atinstalēt authselect konfigurāciju [%d]: %s\n"
+
+#: src/cli/main.c:1005
+msgid "Select profile"
+msgstr "Atlasīt profilu"
+
+#: src/cli/main.c:1006
+msgid "Regenerate configuration for currently selected command"
+msgstr "Atkārtoti izveidot konfigurāciju pašlaik atlasītajai komandai"
+
+#: src/cli/main.c:1007
+msgid "List available profiles"
+msgstr "Uzskaitīt pieejamos profilus"
+
+#: src/cli/main.c:1008
+msgid "List available profile features"
+msgstr "Uzskaitīt pieejamos profila līdzekļus"
+
+#: src/cli/main.c:1009
+msgid "Show profile information"
+msgstr "Rādīt profila informāciju"
+
+#: src/cli/main.c:1010
+msgid "Print profile requirements"
+msgstr "Izvadīt profila prasības"
+
+#: src/cli/main.c:1011
+msgid "Get identifier of currently selected profile"
+msgstr "Iegūt pašlaik atlasītā profila identifikatoru"
+
+#: src/cli/main.c:1012
+msgid "Check if the current configuration is valid"
+msgstr "Pārbaudīt, vai pašreizējā konfigurācija ir derīga"
+
+#: src/cli/main.c:1013
+msgid "Print changes that would be otherwise written"
+msgstr "Izvadīt izmaiņas, kas citādi tiktu ierakstītas"
+
+#: src/cli/main.c:1014
+msgid "Enable feature in currently selected profile"
+msgstr "Iespējot līdzekli pašlaik atlasītajā profilā"
+
+#: src/cli/main.c:1015
+msgid "Disable feature in currently selected profile"
+msgstr "Atspējot līdzekli pašlaik atlasītajā profilā"
+
+#: src/cli/main.c:1016
+msgid "Check if feature is enabled in currently selected profile"
+msgstr "Pārbaudīt, vai līdzeklis ir iespējots pašlaik atlasītajā profilā"
+
+#: src/cli/main.c:1017
+msgid "Create new authselect profile"
+msgstr "Izveidot jaunu authselect profilu"
+
+#: src/cli/main.c:1018
+msgid "Backup commands:"
+msgstr "Dublēšanas komandas:"
+
+#: src/cli/main.c:1019
+msgid "List available backups"
+msgstr "Uzskaitīt pieejamos dublējumus"
+
+#: src/cli/main.c:1020
+msgid "Remove backup"
+msgstr "Noņemt dublējumu"
+
+#: src/cli/main.c:1021
+msgid "Restore from backup"
+msgstr "Atjaunot no dublējuma"
+
+#: src/cli/main.c:1022
+msgid "Other:"
+msgstr "Citas:"
+
+#: src/cli/main.c:1023
+msgid "Opt-out from authselect managed configuration"
+msgstr "Atteikties no authselect pārvaldītas konfigurācijas"
+
+#: src/cli/main.c:1025
+msgid "Print authselect version"
+msgstr "Izvadīt authselect versiju"
