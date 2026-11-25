@@ -1,12 +1,13 @@
 # Göran Uddeborg <goeran@uddeborg.se>, 2018. #zanata, 2021, 2024.
 # Pavel Brezina <pbrezina@redhat.com>, 2018. #zanata
 # Göran Uddeborg <goeran@uddeborg.se>, 2019. #zanata, 2021, 2024.
+# Daniel Nylander <po@danielnylander.se>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-05-04 13:50+0200\n"
-"PO-Revision-Date: 2024-04-23 21:35+0000\n"
-"Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
+"PO-Revision-Date: 2026-11-25 12:18+0000\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://translate.fedoraproject.org/projects/"
 "authselect/12x-authselect-migration7adoc/sv/>\n"
 "Language: sv\n"
@@ -14,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.4\n"
+"X-Generator: Weblate 2026.11.2\n"
 
 #. type: Title =
 #: src/man/authselect-migration.7.adoc:2
@@ -364,7 +365,7 @@ msgid ""
 "URI    ldap://ldap.example.com ldap://ldap-master.example.com:666\n"
 msgstr ""
 "# Ange standard-LDAP-server\n"
-"URI    ldap://ldap.example.com ldap://ldap-master.example.com:666\n"
+"URI    ldap://ldap.exempel.se ldap://ldap-master.exempel.se:666\n"
 
 #. type: Title ~
 #: src/man/authselect-migration.7.adoc:133
